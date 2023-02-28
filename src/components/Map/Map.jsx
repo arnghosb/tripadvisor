@@ -2,18 +2,20 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Paper , Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
-import { Rating } from '@material-ui/lab';
+import  Rating from '@material-ui/lab';
 
 import useStyles from './styles';
 import { GoogleMap } from '@react-google-maps/api';
 
 const Map = () => {
-    const classes=useStyles();
+    const classes= useStyles();
     const isMobile =useMediaQuery('(min-width:600px)');
+
     const coordinates ={ lat:0, lan:0 };
 
     return (
-        <div className='{classes.mapContainer}'>
+        <div className={classes.mapContainer}>
+            <h1>MAP </h1>
             <GoogleMapReact
                 bootstapURLKeys={{ key: 'AIzaSyBn0sc_2A_ZjOXaczpD0GJQ3CWEk-G-_Ec' }}
                 defaultCenter={coordinates}
@@ -30,5 +32,6 @@ const Map = () => {
         </div>
     );
 }
+
 
 export default Map;
